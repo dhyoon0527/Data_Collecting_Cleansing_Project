@@ -1,5 +1,4 @@
 ## Data download and unzip 
-
 # string variables for file download
 
 fileName <- "UCIdata.zip"
@@ -10,8 +9,6 @@ dir <- "UCI HAR Dataset"
 if(!file.exists(fileName)){
     download.file(url,fileName, mode = "wb")     
 }
-
-
 
 # File unzip verification. If the directory does not exist, unzip the downloaded file.
 
@@ -65,7 +62,6 @@ dataSet <- cbind(subject,activity, dataSet)
 act_group <- factor(dataSet$activity)
 levels(act_group) <- activity_labels[,2]
 dataSet$activity <- act_group
-
 
 # 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
